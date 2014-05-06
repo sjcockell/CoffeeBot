@@ -1,28 +1,14 @@
 package notifier
 
-import (
-	"github.com/mattn/go-xmpp"
-	"log"
-)
+import ("appengine"
+	"appengine/xmpp")
 
-
-func Send(server string, username string, password string,
-		notls bool, debug bool, session bool, to string, message string) {
-
-	var talk *xmpp.Client
-	var err error
-	options := xmpp.Options{Host: server,
-		User:     username,
-		Password: password,
-		NoTLS:    notls,
-		Debug:    debug,
-		Session:  session}
-
-	talk, err = options.NewClient()
-
-	if err != nil {
-		log.Fatal(err)
-	} else {
-			talk.Send(xmpp.Chat{Remote: to, Type: "normal", Text: message})
+func Send(from string, to []string, text string, messageType string) {
+	m := &xmpp.Message{
+		From: from,
+		To:   to,
+		Body: text,
+		Type: messageType,
 	}
+	err := m.Send(c)
 }
