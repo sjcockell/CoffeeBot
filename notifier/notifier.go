@@ -1,7 +1,6 @@
 package notifier
 
 import (
-	"fmt"
 	"github.com/mattn/go-xmpp"
 	"log"
 )
