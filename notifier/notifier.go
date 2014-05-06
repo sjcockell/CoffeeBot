@@ -22,8 +22,7 @@ func Send(server string, username string, password string,
 
 	if err != nil {
 		log.Fatal(err)
-	}
-	else {
+	} else {
 			talk.Send(xmpp.Chat{Remote: to, Type: "normal", Text: message})
 	}
 }
