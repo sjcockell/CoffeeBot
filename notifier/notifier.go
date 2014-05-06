@@ -12,12 +12,12 @@ func Send(server string, username string, password string,
 
 	var talk *xmpp.Client
 	var err error
-	options := xmpp.Options{Host: *server,
-		User:     *username,
-		Password: *password,
-		NoTLS:    *notls,
-		Debug:    *debug,
-		Session:  *session}
+	options := xmpp.Options{Host: server,
+		User:     username,
+		Password: password,
+		NoTLS:    notls,
+		Debug:    debug,
+		Session:  session}
 
 	talk, err = options.NewClient()
 

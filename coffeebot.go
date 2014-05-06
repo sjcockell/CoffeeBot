@@ -12,8 +12,10 @@ func main() {
   fmt.Println(reminder)
   fmt.Println(titles[0])
   fmt.Println(links[1])
-  notifier.Send(from='CoffeeBot@bsu-srv.ncl.ac.uk',
-      ['sjcockell@bsu-srv.ncl.ac.uk'],
-      'This is a test',
-      'normal')
+  notifier.Send('bsu-srv.ncl.ac.uk',
+      'CoffeeBot',
+      'password',
+      false,
+      false,
+      false)
 }
