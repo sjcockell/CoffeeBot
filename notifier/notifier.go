@@ -7,7 +7,7 @@ import (
 
 
 func Send(server string, username string, password string,
-		notls bool, debug bool, session bool) {
+		notls bool, debug bool, session bool, to string, message string) {
 
 	var talk *xmpp.Client
 	var err error
@@ -22,5 +22,8 @@ func Send(server string, username string, password string,
 
 	if err != nil {
 		log.Fatal(err)
+	}
+	else {
+			talk.Send(xmpp.Chat{Remote: to, Type: "normal", Text: message})
 	}
 }

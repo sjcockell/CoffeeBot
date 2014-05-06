@@ -17,5 +17,7 @@ func main() {
       'password',
       false,
       false,
-      false)
+      false,
+      "sjcockell",
+      "Testing")
 }
