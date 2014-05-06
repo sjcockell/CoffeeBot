@@ -1,3 +1,5 @@
+package notifier
+
 import "code.google.com/p/appengine-go/appengine/xmpp"
 
 func Send(from string, to []string, text string, messageType string) {
