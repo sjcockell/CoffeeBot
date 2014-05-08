@@ -1,6 +1,6 @@
 package notifier
 
-import ("code.google.com/p/goexmpp/xmpp")
+import ("code.google.com/p/goexmpp")
 
 func Send(from string, to []string, text string, messageType string) {
 	m := &xmpp.Message{
