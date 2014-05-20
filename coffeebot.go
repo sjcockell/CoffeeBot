@@ -4,6 +4,7 @@ import ("fmt"
   "github.com/sjcockell/CoffeeBot/reminder"
   "github.com/sjcockell/CoffeeBot/news"
   "github.com/sjcockell/CoffeeBot/notifier"
+  "code.google.com/p/goexmpp"
 )
 
 func main() {
@@ -12,8 +13,11 @@ func main() {
   fmt.Println(reminder)
   fmt.Println(titles[0])
   fmt.Println(links[1])
-  notifier.Send(from='CoffeeBot@bsu-srv.ncl.ac.uk',
-      ['sjcockell@bsu-srv.ncl.ac.uk'],
-      'This is a test',
-      'normal')
+  from := xmpp.JID{Node: "CoffeeBot", Domain: "example.com"}
+  notifier.Send(from,
+      "target@example.com",
+      "This is a test",
+      "normal",
+      "example.com",
+      5222)
 }
